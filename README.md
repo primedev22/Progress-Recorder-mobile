@@ -1,4 +1,4 @@
-#Progress Recorder is Ionic 2 based app usign SQLite as database.
+# Progress Recorder is Ionic 2 based app usign SQLite as database.
 
 Installation
 
