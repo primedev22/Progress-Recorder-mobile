@@ -1,0 +1,169 @@
+page-speedexam {
+	.gottwodiv {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1000;
+        overflow: hidden;
+        transition:(opacity 0.5s ease-in-out,height 0s 0.5s );
+        &.closed {
+            opacity: 0;
+            height: 0;
+        }
+        .circle {
+            border-radius: 50%;
+            height: 96px;
+            width: 96px;
+            position: absolute;
+            border: 1000px solid rgba(0,46,103,0.85);
+            @include box-sizing(content-box);
+            img {
+                position: absolute;
+                max-width: none;
+                &.start {
+                    width: 96px;
+                    height: 22px;
+                    left: 100%;
+                    top: 50%;
+                    margin: -57px 0 0 0;
+                } 
+            }
+        }
+        .top {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            .circle {
+                left: 50%;
+                top: 21.5%;
+                margin: -1048px 0 0 -1048px;
+            }
+        }
+        .middle {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            height: 200px;
+            width: 100%;
+            margin-top: -100px;
+            color: #fff;
+            text-align: center;
+            z-index: 2;
+            h2 {
+                font-family: 'oswaldregular';
+                font-size: 20px;
+                margin: 0;
+                padding-bottom: 20px;
+            }
+            p {
+                font-size: 16px;
+                margin: 0;
+                padding-bottom: 20px;
+            }
+        }
+    }
+
+    .missed-target {
+    	position: absolute;
+    	left: 0;
+    	top: 0;
+    	width: 100%;
+    	height: 100%;
+    }
+
+    .target {
+    	position: absolute;
+    	left: 50%;
+    	width: 240px;
+    	height: 80px;
+    	margin: -40px 0 0 -120px;
+    	border: 1px dashed $line;
+    	background: $lighter-grey;
+    	@include border-radius(40px);
+    	z-index: 4;
+        @include transition(all 0.2s ease-in-out);       
+        
+    	&.active {
+    		&:after {
+    			background: #fff;
+    			border-color: $blue;
+    		}
+    	}
+    	&.missed {
+    		border-color: $red;
+    		&:after {
+    			background: #fff;
+    			border-color: $red;
+    		}
+    	}
+    	&.activated {
+    		&:after {
+    			@include transform(scale(1.5));
+    		}
+    	}
+    }
+
+    .top-target {
+        top: 21.5%;
+        &:after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 6px;
+            height: 6px;
+            @include border-radius(50%);
+            background: $light-grey;
+            border: 17px solid #fff;
+            margin: -19px 0 0 -19px;
+            @include transition(all 0.2s ease-in-out);
+        }
+    }   
+    
+    .bottom-target {
+    	bottom: 21.5%;
+        margin: 0 0 -40px -120px;
+        &:after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 6px;
+            height: 6px;
+            @include border-radius(50%);
+            background: $light-grey;
+            border: 17px solid #fff;
+            margin: -19px 0 0 -19px;
+            @include transition(all 0.2s ease-in-out);
+        }
+    }
+
+    .score {
+    	position: absolute;
+    	left: 0;
+    	top: 50%;
+    	width: 100%;
+    	height: 80px;
+    	margin-top: -30px;
+    	color: $grey;
+    	z-index: 2;
+    	text-align: center;
+    	h2 {
+    		font-size: 42px;
+    		line-height: 1;
+    		padding-bottom: 10px;
+    		margin: 0;
+    	}
+    	p {
+    		margin: 0;
+    		font-size: 16px;
+    		line-height: 1;
+    	}
+    }
+
+}

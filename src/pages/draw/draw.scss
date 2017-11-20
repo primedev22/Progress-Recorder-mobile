@@ -1,0 +1,98 @@
+page-draw {
+    .scroll-content {
+        pointer-events: auto;
+    }
+    .gotonediv {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1000;
+        overflow: hidden;
+        background-color: rgba(0,46,103,0.85);
+        transition:(opacity 0.5s ease-in-out,height 0s 0.5s );
+        &.closed {
+            opacity: 0;
+            height: 0;
+        }
+        // .circle {
+        //     border-radius: 50%;
+        //     height: 66px;
+        //     width: 66px;
+        //     position: absolute;
+        //     border: 1000px solid rgba(0,46,103,0.85);
+        //     @include box-sizing(content-box);
+        //     img {
+        //         position: absolute;
+        //         max-width: none;
+        //         &.start {
+        //             width: 96px;
+        //             height: 17px;
+        //             left: 100%;
+        //             top: 50%;
+        //             margin: -11px 0 0 10px;
+        //         } 
+        //         &.finish {
+        //             width: 102px;
+        //             height: 15px;
+        //             right: 100%;
+        //             top: 50%;
+        //             margin: -11px 10px 0 0;
+        //         } 
+        //     }
+        // }
+        // .top, .bottom {
+        //     position: absolute;
+        //     left: 0;
+        //     top: 0;
+        //     width: 100%;
+        //     height: 50%;
+        //     overflow: hidden;
+        // }
+        // .top {
+        //     .circle {
+        //         left: 11%;
+        //         top: 36.5%;
+        //         margin: -1033px 0 0 -1033px;
+        //     }
+        // }
+        // .bottom {
+        //     top: 50%;
+        //     .circle {
+        //         right: 11%;
+        //         bottom: 53.5%;
+        //         margin: 0 -1033px -1033px 0;
+        //     }
+        // }
+        .middle {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            height: 200px;
+            width: 100%;
+            margin-top: -100px;
+            color: #fff;
+            text-align: center;
+            z-index: 2;
+            h2 {
+                font-family: 'oswaldregular';
+                font-size: 20px;
+                margin: 0;
+                padding-bottom: 20px;
+            }
+            p {
+                font-size: 16px;
+                margin: 0;
+                padding-bottom: 20px;
+            }
+        }
+    }
+
+    .scroll-content {
+        pointer-events: auto;
+    }
+    .draw-cont {
+    	padding-top: 40px;
+    }
+}

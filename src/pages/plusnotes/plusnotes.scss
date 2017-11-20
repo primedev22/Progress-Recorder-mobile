@@ -1,0 +1,130 @@
+page-plusnotes {
+    .content {
+        background: #fff;
+    }
+    .actions-top {
+        position: absolute;
+    }
+    h1 {
+        color: $grey;
+        text-align: center;
+        font-size: 20px;
+        margin: 0;
+        padding-top: 5px;
+    }
+    h4,h5 {
+        color: $grey;
+        text-align: center;
+        font-size: 14px;
+        margin: 0;
+    }
+    h5 {
+        padding-bottom: 10px;
+    }
+    small {
+        color: $grey;
+        text-align: center;
+        font-size: 12px;
+        display: block;
+    }
+    .form-cont {
+        padding-top: 69px;
+    }
+    .form-group {
+        padding-bottom: 30px;
+        &.slider {
+            padding-bottom: 20px;
+        }
+    }
+    .gotit {
+        padding: 15px;
+        text-align: center;
+        color: #fff;
+        background: #264D7E;
+        @include border-radius(10px);
+        p {
+            //margin: 0 0 5px;
+            font-size: 14px;
+        }
+    }
+    textarea {
+        border: 1px solid $light-grey;
+        display: block;
+        @include border-radius(10px);
+        padding: 17px 15px 15px;
+        text-align: center;
+        color: $grey;
+        font-size: 14px;
+        @include box-sizing(border-box);
+        width: 100%;
+        max-width: 100%;
+        @include transition(all 0.2s ease-in-out);
+        &:focus {
+            border-color: $blue;
+        }
+    }
+    .main-textarea {
+        font-size: 20px;
+        padding: 17px 15px 9px;
+        min-height: 150px;
+    }
+    .item-ios, .item-md {
+        padding: 0;
+        font-size: 12px;
+        color: $grey;
+        &.item-block .item-inner {
+            padding: 0;
+            border: 0;
+        }
+    }
+    .range-ios, .range-md {
+        padding: 0 5px;
+    }
+    .range-ios .range-bar, .range-md .range-bar {
+        top: 16px;
+        height: 4px;
+        background: $light-grey;
+        @include border-radius(2px);
+    }
+    .range-ios .range-knob {
+        top: 5px;
+        border: 1px solid $light-grey;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+    .range-ios-secondary .range-bar-active, .range-ios-secondary .range-tick-active,
+    .range-md-secondary .range-bar-active {
+        background: $blue;
+    }
+    .range-md .range-knob, .range-md .range-knob-min.range-knob-min .range-knob {
+        top: -1px;
+        left: 3px;
+        border: 1px solid $light-grey;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        background: #fff;
+        width: 38px;
+        height: 38px;
+    }
+    .range-md [range-left], .range-ios [range-left] {
+        margin: 0 22px 0 0;
+        width: 40px;
+        text-align: right;
+    }
+    .range-md [range-right], .range-ios [range-right] {
+        margin: 0 0 0 22px;
+        width: 40px;
+    }
+    .range-md .range-knob-handle {
+        &.range-knob-pressed {
+            .range-knob {
+                @include transform(scale(0.67));
+            }
+            
+        }
+    }
+    .btn-large {
+        width: 100%;
+        text-align: center;
+    }
+}

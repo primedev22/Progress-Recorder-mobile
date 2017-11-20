@@ -1,0 +1,33 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "record.progress"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "record.progress"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "record.progress"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "record.progress"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "record.progress"
+        },
+        "cordova-sqlite-storage": {
+            "PACKAGE_NAME": "record.progress"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "record.progress"
+        }
+    },
+    "dependent_plugins": {}
+}

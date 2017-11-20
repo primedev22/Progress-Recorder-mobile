@@ -1,0 +1,152 @@
+/*page-home {
+    h1{color: white;font-size:28px;}
+    h2{color: white;font-size:26px;}
+    h3{color: white;font-size:24px;}
+    h4{color: white;font-size:18px;line-height: 5px}
+    h5{color: white;font-size:16px;}
+    h6{color: white;font-size:14px;}    
+    div.swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets { width:33% }
+    .swiper-pagination-bullet{background-color: white}
+    .swiper-pagination-bullet.swiper-pagination-bullet-active{background-color: red}
+    .swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets {top: 87%}    
+    
+}*/
+page-home {
+
+    .bg {
+        background: url(../assets/img/1_background.png) center center;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        @include background-size(cover);
+    }
+
+    .hm-center {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 100%;
+        height: 320px;
+        z-index: 10;
+        margin-top: -210px;
+        text-align: center;
+        .logo {
+            width: 151px;
+            height: 101px;
+        }
+        @include respond-to(mobileLarge) {
+            height: 330px;
+            margin-top: -230px;
+        }
+        @include respond-to(mobilePlus) {
+            height: 380px;
+            margin-top: -250px;
+            .logo {
+                width: 214px;
+                height: 132px;
+            }
+        }
+    }
+
+    .hm-slides {
+        color: #fff;
+        padding-top: 38px;
+        h1 {
+            font-size: 30px;
+            line-height: 30px;
+            padding: 12px 0 18px;
+            margin: 0;
+        }
+        p {
+            font-size: 18px;
+            margin: 0;
+        }
+        .slide-zoom {
+            padding-bottom: 50px;
+        }
+        .swiper-pagination-bullet {
+            width: 10px;
+            height: 10px;
+            background-color: #fff;
+            opacity: 1;
+        }
+        .swiper-pagination-bullet-active {
+            background-color: $red;
+        }
+        @include respond-to(mobileLarge) {
+            padding-top: 48px;
+        }
+        @include respond-to(mobilePlus) {
+            padding-top: 68px;
+        }
+    }
+
+    .hm-actions {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        z-index: 10;
+        background: #fff;
+        .link {
+            @include box-sizing(border-box);
+            width: 230px;
+            color: #fff;
+            font-family: 'oswaldbold';
+            font-size: 13px;
+            letter-spacing: 2px;
+            line-height: 1;
+            text-decoration: none;
+            padding: 0 13px 0 15px;
+            text-align: center;
+            position: absolute;
+            top: -33px;
+            left: 50%;
+            margin-left: -115px;
+            display: block;
+            &:active {
+                opacity: 0.5;
+            }
+        }
+        .hand {
+            float: left;
+            @include box-sizing(border-box);
+            width: 50%;
+            color: #0955B3;
+            font-family: 'oswaldbold';
+            font-size: 11px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            line-height: 1;
+            text-decoration: none;
+            padding: 20px 14px 20px 15px;
+            text-align: center;
+            &.first-hand {
+                border-right: 1px dashed #0955B3;
+            }
+            img {
+                display: block;
+                width: 23px;
+                height: 29px;
+                margin: 0 auto 7px;
+                padding-right: 1px;
+            }
+        }
+        @include respond-to(mobileLarge) {
+            .hand {
+                font-size: 14px;
+                letter-spacing: 2px;
+                padding: 30px 13px 30px 15px;
+                img {
+                    width: 30px;
+                    height: 37px;
+                    padding-right: 2px;
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+        
+}

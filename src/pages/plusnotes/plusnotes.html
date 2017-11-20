@@ -1,0 +1,62 @@
+<ion-nav id="nav" #rootNavController [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
+<ion-content no-bounce padding>
+
+  <div class="actions-top">
+    <a href="#" class="top-link left" (click)="onBackTapped()">Back</a>
+    <h1>Progress notes</h1>
+    <small>{{datetime | date: 'EE dd MMM - hh:mm'}}</small>
+  </div>
+
+  <div class="form-cont">
+
+    <div class="form-group">
+      <textarea class="main-textarea" [(ngModel)]="generalNote" stype="text" placeholder="How do you feel? What did you do?"></textarea>
+    </div>
+
+    <div class="form-group">
+      <div class="gotit">
+        <p>The following details will be remembered for future notes</p>
+        <!-- <a href="#" class="btn" (click)="onGotitTapped()">Got it</a> -->
+      </div>
+    </div>
+
+    <div class="form-group slider">
+      <h4>Sleep - {{sleepHour.upper - sleepHour.lower}} hours</h4>
+      <ion-item>
+        <ion-range dualKnobs="true" min="0" max="17" [(ngModel)]="sleepHour" color="secondary">
+          <ion-label range-left>{{[(this.sleepHour.lower + 18) % 24] + ":00"}}</ion-label>
+          <ion-label range-right>{{[(this.sleepHour.upper + 18) % 24] + ":00"}}</ion-label>
+        </ion-range>
+      </ion-item>
+    </div>
+
+    <div class="form-group slider">
+      <h4>Stress {{stressLevel}}/10</h4>
+      <ion-item>
+        <ion-range min="0" max="10" [(ngModel)]="stressLevel" color="secondary">
+          <ion-label range-left>Low</ion-label>
+          <ion-label range-right>High</ion-label>
+        </ion-range>
+      </ion-item>
+    </div>
+
+    <div class="form-group">
+      <h5>Daily medication/dose/quantity (comma separated)</h5>
+      <textarea [(ngModel)]="medicationNote" type="text" placeholder="E.g. Medication name 0.375mg x1, Medication name 1.5mg x3" onkeydown="if(event.keyCode == 13) return false;"></textarea>
+    </div>
+
+    <div class="form-group">
+      <h5>Daily supplements/quantity (comma separated)</h5>
+      <textarea [(ngModel)]="supplementNote" type="text" placeholder="E.g. Supplement name 0.375mg x1, Supplement name 1.5mg x3" onkeydown="if(event.keyCode == 13) return false;"></textarea>
+    </div>
+
+    <div class="form-group">
+      <h5>Diet (comma separated)</h5>
+      <textarea [(ngModel)]="dietNote" type="text" placeholder="E.g. Diet name" onkeydown="if(event.keyCode == 13) return false;"></textarea>
+    </div>
+    <div class="form-group">
+      <a href="#" class="btn btn-large" (click)="onSubmitTapped()">Submit</a>
+    </div>
+  </div>
+
+</ion-content>

@@ -1,0 +1,23 @@
+<ion-nav id="nav" #rootNavController [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
+<ion-content no-bounce>
+  <div (swipeleft)="onSwipeLeftEvent()" (swiperight)="onSwipeRightEvent()">
+    <div class="actions-top">
+      <a href="#" class="top-link left" (click)="onBackTapped()">Back</a>
+      <a href="#" class="top-link right" (click)="onNotesTapped()">Details</a>
+      <h1 style="text-align: center">{{currentDatetime | date: 'EE dd MMM - hh:mm'}}</h1>
+      <small>{{currentId+1}} of {{currentProgressCount}}</small>
+    </div>
+    
+    <div class="gallery-cont">    
+      <div class="draw-cont">          
+        <canvas-singlegallery #singlegallery></canvas-singlegallery>
+      </div>     
+    </div>
+
+    <div class="actions">
+      <a href="#"  id="LeftToggle1" (click)="onLeftTapped()" class="btn btn-white left active">Left</a>
+      <a href="#"  id="RightToggle1" (click)="onRightTapped()" class="btn btn-white left">Right</a>
+      <!-- <a href="#" class="btn right" (click)="onShareTapped()">Share</a> -->
+    </div>
+  </div>
+</ion-content>

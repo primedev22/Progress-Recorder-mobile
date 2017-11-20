@@ -1,0 +1,35 @@
+<ion-nav id="nav" #rootNavController [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
+<ion-content no-bounce>
+  <div class="ld-graph">
+    <a id="close" href="#" class="toggle-menu" (click)="toggleMenu()"></a>
+    <div id="menu" class="menu">
+      <a href="#" (click)="onHomeTapped()">Home</a>
+      <a href="http://progressrecorderapp.com">Progressrecorderapp.com</a>
+      <a href="#" (click)="onResetTapped()">Reset all data</a>
+    </div>
+    <h1>Accuracy/date (%)</h1>
+    <p class="left-num">100<br>75<br>50<br>25</p>
+    <p class="right-num">100<br>75<br>50<br>25</p>
+    <div class="toggle"><a href="#" id="LeftToggle" (click)="onIsLeftTapped()" class="active">Left Hand</a><a href="#" id="RightToggle" (click)="onIsRightTapped()">Right Hand</a></div>
+    <span class="twenty"></span>
+    <span class="fifty"></span>
+    <span class="seventy"></span>
+    <span class="hundred"></span>
+    <div class="graph">
+      <!-- This width needs to be workked out based on total entries -->
+      <div class="graph-cont" id="graph-cont">       
+      </div>
+      <!-- This width needs to be workked out based on total entries -->
+      <div class="blue" id="graph-cont-blue"></div>
+    </div>
+    <a href="#" class="btn btn-large btn-dark"(click)="onViewGalleryTapped()">View Gallery</a> 
+  </div>  
+  <div class="actions-top">    
+  </div>
+  <div class="ld-actions">
+    <p class="instructions">Continue to record your progress and share<br>the results with your specialist</p>
+    <a class="first-hand hand" href="#" (click)="onLeftHandTapped()"><img src="assets/img/1_lefthand.svg"/>Left hand</a>
+    <a class="hand" href="#" (click)="onRightHandTapped()"><img src="assets/img/1_righthand.svg"/>Right hand</a>
+  </div>
+
+</ion-content>

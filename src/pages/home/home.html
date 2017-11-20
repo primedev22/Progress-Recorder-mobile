@@ -1,0 +1,38 @@
+
+<ion-nav id="nav" #rootNavController [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
+<ion-content no-bounce>    
+  <div class="hm-center">
+    <img class="logo" src="assets/img/logo.svg"/>
+    <div class="hm-slides">
+      <ion-slides pager>
+        <ion-slide no-padding>
+          <h1>Record change</h1>
+          <p>Record your progress and track<br>
+          changes on a day to day basis by<br>
+          measuring hand coordination.</p>   
+        </ion-slide>
+        <ion-slide>
+          <h1>Just 30 seconds</h1>
+          <p>A hassle free solution making<br>each recording quick and easy.<br>
+          Get in and get out.</p>
+        </ion-slide>
+        <ion-slide>
+          <h1>See for yourself</h1>
+          <p>Identify possible reasons for the<br>
+          fluctuation of your symptoms.<br>
+          Share the results with your specialist.</p>                 
+        </ion-slide>
+      </ion-slides>
+    </div> 
+  </div>
+    
+  <div class="hm-actions">
+    <a class="link" href="http://progressrecorderapp.com/">progressrecorderapp.com</a>
+    <a class="first-hand hand" href="#" (click)="onLeftHandTapped()"><img src="assets/img/1_lefthand.svg"/>Left hand</a>
+    <a class="hand" href="#" (click)="onRightHandTapped()"><img src="assets/img/1_righthand.svg"/>Right hand</a>
+  </div>
+
+  <div class="bg"></div>
+
+</ion-content>
+

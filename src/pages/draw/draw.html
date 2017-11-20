@@ -1,0 +1,31 @@
+
+<ion-nav id="nav" #rootNavController [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
+<ion-content no-bounce> 
+
+  <div id="gotonediv" class="gotonediv">
+    <!-- <div class="top">
+      <div class="circle"><img class="start" width="96" height="17" src="assets/img/3_starthere.svg"/></div>
+    </div>
+    <div class="bottom">
+      <div class="circle"><img class="finish" src="assets/img/3_finishhere.svg"/></div>
+    </div> -->
+    <div class="middle">
+      <h2>Begin by following the path using<br>either your finger or a stylus</h2>
+      <p>Try your best to stay within the path and<br>maintain a smooth, consistent movement.</p>
+      <a href="#" id="gotonebtn" class="btn btn-large" (click)="closeOne()">Got it</a>
+    </div>
+  </div>
+
+  <div class="actions-top">
+    <a href="#" class="top-link left" (click)="onBackTapped()">Back</a>
+  </div>
+
+  <div class="draw-cont">
+    <canvas-draw></canvas-draw>
+  </div>
+
+  <div class="actions">
+    <a href="#" class="btn btn-grey left" (click)="onRedrawTapped()">Redraw</a>
+    <a href="#" class="btn right" (click)="onNextTapped()">Next</a>
+  </div>
+</ion-content>

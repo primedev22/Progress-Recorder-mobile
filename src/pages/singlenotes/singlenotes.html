@@ -1,0 +1,66 @@
+<ion-nav id="nav" #rootNavController [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
+<ion-content no-bounce>
+  <div (swipeleft)="onSwipeLeftEvent()" (swiperight)="onSwipeRightEvent()">
+    <div class="actions-top blue">
+      <a href="#" class="top-link left" (click)="onBackTapped()">Back</a>
+      <a href="#" class="top-link right" (click)="onBackTapped()">Image</a>
+      <h1>{{currentDatetime | date: 'EE dd MMM - hh:mm'}}</h1>
+      <small>{{currentId+1}} of {{currentProgressCount}}</small>
+    </div>
+    <div class="notes-top">
+      <div class="blue-detail">
+        <div>
+          <h2>{{currentDragAccuracy  }}%</h2>
+          <p>Accuracy (Avg {{averageDragAccuracy }}%)</p>
+        </div>
+        <div>
+          <h2>{{currentHitAccuracy}}</h2>
+          <p>Tap test (Avg {{averageHitAccuracy }})</p>
+        </div>
+      </div>
+      <!-- <div class="steps-detail">
+        <div>
+          <h3>3,000</h3>
+          <p>Steps (Total 4,897)</p>
+        </div>
+        <div>
+          <h3>4.126</h3>
+          <p>Kms (Total 6.734)</p>
+        </div>
+      </div> -->
+    </div>
+    <div class="notes" [innerHtml]="'<h4>' + currentGeneralNote+ '</h4>'">
+    </div>
+    <div class="sleep-detail">
+      <div>
+        <h3>{{(currentUpperSleepHour-currentLowerSleepHour)}}</h3>
+        <p>Hours sleep (Avg {{averageSleepHour  }})</p>
+      </div>
+      <div>
+        <h3>{{currentStressLevel}}</h3>
+        <p>Stress / 10 (Avg {{averageStressLevel}})</p>
+      </div>
+    </div>
+    <div class="row-detail" id="MedicationNote">
+      <p>Daily medication/dose</p>
+      {{currentMedicationNote}}
+    </div>
+    <div class="row-detail" id="SupplementNote">
+      <p>Daily supplements/dose</p>
+      {{currentSupplementNote}}
+    </div>
+    <div class="row-detail" id="DietNote">
+      <p>Diet</p>
+      {{currentDietNote}}
+    </div>
+
+    <!-- <div class="actions-bottom">
+      <a href="#" class="btn btn-grey left">Edit</a>
+      <a href="#" class="btn btn-grey left" (click)="onDeleteTapped()">Delete</a>
+      <a href="#" class="btn right">Share</a>
+    </div> -->
+  </div>
+</ion-content>
+
+
+

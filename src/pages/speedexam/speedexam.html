@@ -1,0 +1,38 @@
+<ion-nav id="nav" #rootNavController [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
+<ion-content no-bounce >
+
+  <div id="gottwodiv" class="gottwodiv">
+    <div class="top">
+      <div class="circle"><img class="start" width="96" height="17" src="assets/img/4_starthere.svg"/></div>
+    </div>
+    <div class="middle">
+      <h2>Now your speed will be recorded<br>with a tap test</h2>
+      <p>Simply touch the alternating blue dot<br>as many times as you can in 15 seconds.</p>
+      <a href="#" id="gottwobtn" class="btn btn-large" (click)="closeTwo()">Got it</a>
+    </div>
+  </div>
+
+  <div class="actions-top">
+    <a href="#" class="top-link left" id="BackButton" (click)="onBackTapped()">Back</a>
+  </div>
+
+  <a href="#" class="target top-target active" (click)="onTopAreaTapped($event)" id="TopRegion"><div class="top-circle" id="TopCircle"></div></a>
+
+  <div class="score" (click)="onMissedAreaTapped()">
+    <h2>{{timeText}}</h2>
+    <p>{{scoreText}}</p>
+  </div>
+  
+  <!-- Shows missed:
+  <a href="#" class="target top-target missed"></a> -->
+  <a href="#" class="target bottom-target" (click)="onBottomAreaTapped($event)" id="BottomRegion"></a>
+
+  <!-- This takes up full screen in background.
+  So if you miss the target then you have a target to action the class change(missed) on the target. -->
+  <a href="#" class="missed-target" (click)="onMissedAreaTapped()"></a> 
+
+  <div class="actions">
+    <a href="#" id="ButtonRetest" class="btn btn-grey left" (click)="onRetestTapped()" hidden>Retest</a>
+    <a href="#" id="ButtonNext" class="btn right" (click)="onNextTapped()" hidden>Next</a>
+  </div>   
+</ion-content>

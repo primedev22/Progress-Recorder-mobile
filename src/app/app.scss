@@ -1,0 +1,222 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+@mixin respond-to($media) {
+	@if $media == mobileSmall {
+		@media screen and (max-width: 360px) { @content }
+	}
+	@else if $media == mobileLarge {
+		@media screen and (min-width: 370px) { @content }
+	}
+	@else if $media == mobilePlus {
+		@media screen and (min-width: 400px) { @content }
+	}
+	@else if $media == tablet {
+		@media screen and (min-width: 721px) { @content }
+	}
+	@else if $media == tabletOnly {
+		@media screen and (min-width: 721px) and (max-width: 1099px) { @content }
+	}
+}
+@mixin box-sizing($boxModel) {
+	-webkit-box-sizing: $boxModel;
+	-moz-box-sizing: $boxModel;
+	box-sizing: $boxModel;
+}
+@mixin transition($value) {
+	-webkit-transition: $value;
+	-moz-transition: $value;
+	transition: $value;
+}
+@mixin background-size($backSize) {
+	-webkit-background-size: $backSize;
+	-moz-background-size: $backSize;
+	-o-background-size: $backSize;
+	background-size: $backSize;
+}
+@mixin placeholderStyling {
+	::-webkit-input-placeholder { @content; }
+	::-moz-placeholder { @content; }
+	:-ms-input-placeholder { @content; }
+}
+
+@font-face {
+    font-family: 'oswaldbold';
+    src: url('../assets/oswald-fonts/oswald-bold-webfont.eot');
+    src: url('../assets/oswald-fonts/oswald-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../assets/oswald-fonts/oswald-bold-webfont.woff2') format('woff2'),
+         url('../assets/oswald-fonts/oswald-bold-webfont.woff') format('woff'),
+         url('../assets/oswald-fonts/oswald-bold-webfont.ttf') format('truetype'),
+         url('../assets/oswald-fonts/oswald-bold-webfont.svg#oswaldbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'oswaldlight';
+    src: url('../assets/oswald-fonts/oswald-light-webfont.eot');
+    src: url('../assets/oswald-fonts/oswald-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../assets/oswald-fonts/oswald-light-webfont.woff2') format('woff2'),
+         url('../assets/oswald-fonts/oswald-light-webfont.woff') format('woff'),
+         url('../assets/oswald-fonts/oswald-light-webfont.ttf') format('truetype'),
+         url('../assets/oswald-fonts/oswald-light-webfont.svg#oswaldlight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'oswaldregular';
+    src: url('../assets/oswald-fonts/oswald-regular-webfont.eot');
+    src: url('../assets/oswald-fonts/oswald-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../assets/oswald-fonts/oswald-regular-webfont.woff2') format('woff2'),
+         url('../assets/oswald-fonts/oswald-regular-webfont.woff') format('woff'),
+         url('../assets/oswald-fonts/oswald-regular-webfont.ttf') format('truetype'),
+         url('../assets/oswald-fonts/oswald-regular-webfont.svg#oswaldregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@include placeholderStyling {
+	color: $line;
+	font-style: normal;
+	@include transition(color 0.2s ease-in-out);
+}
+.seenOneBefore .gotonediv {
+    display: none;
+}
+.seenTwoBefore .gottwodiv {
+    display: none;
+}
+.seenThreeBefore .gotthreediv {
+    display: none;
+}
+
+ion-content {
+    background: transparent;
+    font-family: 'oswaldlight';
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+.left {
+	float: left;
+}
+.right {
+	float: right;
+}
+.btn {
+	@include box-sizing(border-box);
+	border-radius: 20px;
+	text-decoration: none;
+	background: $blue;
+	color: #fff;
+	font-family: 'oswaldbold';
+	font-size: 11px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	line-height: 1;
+	padding: 10px 14px 10px 15px;
+	@include transition(all 0.2s ease-in-out);
+	display: inline-block;
+	&:active {
+		background: $dark-blue;
+	}
+	&.btn-grey {
+		border: 1px solid $light-grey;
+		background: #fff;
+		color: $grey;
+		&:active {
+			background: #fff;
+			color: $blue;
+		}
+	}
+	&.btn-dark {
+		background: $dark-blue;
+		&:active {
+			background: darken($dark-blue,1.5);
+		}
+	}
+	&.btn-white {
+		background: #fff;
+		color: $grey;
+		&:active {
+			background: #fff;
+			color: $blue;
+		}
+		&.active {
+			background: $blue;
+			color: #fff;
+		}
+	}
+	&.btn-large {
+		border-radius: 30px;
+		font-size: 14px;
+		letter-spacing: 2px;
+		padding: 20px 28px 20px 30px;
+	}
+}
+.actions {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	@include box-sizing(border-box);
+	padding: 15px;
+	z-index: 10;
+}
+.actions-top {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	@include box-sizing(border-box);
+	padding: 15px;
+	z-index: 10;
+	.left, .right {
+		position: absolute;
+		top: 20px;
+	}
+	.left {
+		left: 15px;
+	}
+	.right {
+		right: 15px;
+	}
+	.top-link {
+		color: $grey;
+		text-decoration: none;
+		font-family: 'oswaldbold';
+		font-size: 11px;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+		@include transition(all 0.2s ease-in-out);
+		&:active {
+			color: $blue;
+		}
+	}
+	&.blue {
+		background: $dark-blue;
+		.top-link {
+			color: #fff;
+			&:active {
+				color: #fff;
+				opacity: 0.6;
+			}
+		}
+	}
+}
+
+
+
